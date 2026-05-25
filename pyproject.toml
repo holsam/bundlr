@@ -1,16 +1,18 @@
 [project]
 name = "bundlr"
-version = "0.0.0"
+version = "1.0.0"
 description = "A CLI tool for bundling files into a directory structure-aware markdown or JSON file."
 readme = "README.md"
 authors = [
     { name = "Sam Holland", email = "hol_sam@icloud.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "typer>=0.25.1",
+]
 
 [project.scripts]
-bundlr = "bundlr:main"
+bundlr = "bundlr.main:bundlr"
 
 [build-system]
 requires = ["uv_build>=0.11.2,<0.12.0"]
