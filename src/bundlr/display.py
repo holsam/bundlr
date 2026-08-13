@@ -45,15 +45,12 @@ def printBundlrHeader(target_dir: Path):
     _printDivider(char='=', embed=bundlr_title)
     print(f'[bold]Bundling target directory:[/bold] [cyan]{target_dir.resolve()}[/cyan]')
 
-# printSuccessFooter: prints footer for succeeded bundle to terminal
-def printSuccessFooter(target_dir: Path, output_dir: Path, fmt: str):
-    print(f'[bold]Output bundle file wrote to:[/bold] [cyan]{output_dir}/{target_dir.name}.{fmt}[/cyan]')
-    _printDivider(char='=', embed=bundlr_title)
-    print(f'\n')
-
-# printFailureFooter: prints footer for failed bundle to terminal
-def printFailureFooter(target_dir: Path, output_dir: Path, fmt: str):
-    print(f'[red][bold]Output bundle file could not be created[/bold][/red]')
+# printBundlrFooter: prints footer splash to terminal
+def printBundlrFooter(result: bool, out_file):
+    if not result:
+        print(f'[bold red]ERROR:[/bold red] Output bundle file ([cyan]{out_file}[/cyan]) could not be created')
+    else:
+        print(f'[bold green]SUCCESS:[/bold green] Output bundle file wrote to: [cyan]{out_file}[/cyan]')
     _printDivider(char='=', embed=bundlr_title)
     print(f'\n')
 

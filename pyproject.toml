@@ -12,7 +12,9 @@ dependencies = [
 ]
 
 [project.scripts]
-bundlr = "bundlr.main:bundlr"
+bundlr = "bundlr.cli:bundlr"
+bundlr-md = "bundlr.cli:bundlrmd"
+bundlr-js = "bundlr.cli:bundlrjs"
 
 [build-system]
 requires = ["uv_build>=0.11.2,<0.12.0"]
